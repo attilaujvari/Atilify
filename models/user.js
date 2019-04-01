@@ -16,10 +16,25 @@ const userSchema = new Schema({
     isAdmin: {
         type: Boolean,
         default: false
-    }
+    },
+    userImg: String,
+    firstName: String,
+    lastName: String,
+    email: String,
+    likedPosts: [{
+        type: Schema.Types.ObjectId,
+        ref: "Post",
+        default: []
+    }],
+    votedFor: [{
+        type: Schema.Types.ObjectId,
+        ref: "Post",
+        default: []
+    }]
 })
 
 // Password encryption function on /auth/signup
+// using 'function' to be able to reference 'this'
 userSchema.pre("save", function(next){
     const user = this
     if(!user.isModified("password")) return next()

@@ -7,14 +7,14 @@ const expressJwt = require("express-jwt")
 require("dotenv").config()
 const PORT = process.env.PORT || 6969
 
-//  Middlewares
-app.use(express.json())
+//  Middlewares that fire on every request
+app.use(express.json())   //parses objects so we get req.body
 app.use(morgan("dev"))
 
 // DB Connect
-mongoose.connect("mongodb://localhost:27017",
-    {"useNewUrlParser": true}, () => {
-    console.log("[o] Connected to the DB")
+mongoose.connect("mongodb://localhost:27017/atilify",
+    {useNewUrlParser: true},
+    () => {console.log("[o] Connected to the DB")
 })
 
 //  Security checkpoint - checking if secret in JWT matches our .env secret

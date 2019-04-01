@@ -1,15 +1,23 @@
 {
   "name": "Atilify",
   "version": "1.0.0",
-  "description": "",
+  "description": "Full-stack all-encompassing relationship and personnel management tool",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/attilaujvari/Atilify.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/attilaujvari/Atilify/issues"
+  },
+  "homepage": "https://github.com/attilaujvari/Atilify#readme",
   "dependencies": {
     "bcrypt": "^3.0.5",
     "dotenv": "^7.0.0",
