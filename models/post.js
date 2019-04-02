@@ -31,7 +31,6 @@ const postSchema = new Schema({
         },
         comment: {
             type: String,
-            required: true
         },
         timeStamp: {
             type: Date,
@@ -46,5 +45,6 @@ const postSchema = new Schema({
         type: String,
         default: []
     }]
-
 })
+
+module.exports = mongoose.model("Post", postSchema)

@@ -35,4 +35,4 @@ const todoSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model("Post", todoSchema)
+module.exports = mongoose.model("Todo", todoSchema)

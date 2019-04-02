@@ -1,0 +1,17 @@
+.nav{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.navRight{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+.navAll >div{
+     padding: 15px;
+}
+.navAll a{
+    margin: 15px;
+}

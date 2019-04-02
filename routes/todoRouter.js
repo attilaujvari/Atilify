@@ -3,7 +3,7 @@ const todoRouter = express.Router()
 const Todo = require('../models/todo.js')
 
 
-// Add new post for a specific user
+// Add new todos for a specific user
 todoRouter.post("/todo", (req, res, next) => {
     const newTodo = new Todo(req.body)
     newTodo.user = req.user._id
@@ -16,7 +16,7 @@ todoRouter.post("/todo", (req, res, next) => {
     })
 })
 
-// Get all posts belonging to a specific user
+// Get all todos belonging to a specific user
 todoRouter.get("/todo", (req, res, next) => {
     Todo.find({user: req.user._id}, (err, userTodos) => {
         if(err){

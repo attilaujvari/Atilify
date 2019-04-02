@@ -3,7 +3,9 @@ const User = require('../models/user.js')
 const authRouter = express.Router()
 const jwt = require('jsonwebtoken')
 
+// .withoutPassword comes from the User object from user.js so that the User is sent to the frontend always w/o an encrypted password
 
+// signup POST     /auth/signup
 authRouter.post("/signup", (req, res, next) => {
     // Does a user by the submitted username already exists
     User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
@@ -19,6 +21,7 @@ authRouter.post("/signup", (req, res, next) => {
         }
         // Create the user, then send the user object and JWT token to the front-end
         const newUser = new User(req.body)
+        //  the below line references the pre-save hook in user.js to save their password encrypted. Then .save is executed
         newUser.save((err, savedUser) => {
             if(err) {
                 res.status(500)
@@ -33,8 +36,9 @@ authRouter.post("/signup", (req, res, next) => {
     })
 })
 
-
+// login POST     /auth/login
 authRouter.post("/login", (req, res, next) => {
+    //  Find user by username
     User.findOne({username: req.body.username.toLowerCase()}, (err, user) => {
         if(err){
             res.status(500)

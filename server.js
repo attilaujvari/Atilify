@@ -17,16 +17,18 @@ mongoose.connect("mongodb://localhost:27017/atilify",
     () => {console.log("[o] Connected to the DB")
 })
 
+// Routes
+app.use("/public", require("./routes/publicRouter.js"))
+app.use("/auth", require('./routes/authRouter.js'))
 //  Security checkpoint - checking if secret in JWT matches our .env secret
 app.use("/api", expressJwt({secret: process.env.SECRET}))
-
-// Routes
-app.use("/auth", require('./routes/authRoutes.js'))
-app.use("/api/todo", require('./routes/todoRoutes.js'))
+app.use("/api/todo", require('./routes/todoRouter.js'))
+app.use("/api/posts", require("./routes/postRouter.js"))
 
 // Global Server Error Handler
 app.use((err, req, res, next) => {
     console.error(err)
+    //  this is the expressJWT error
     if(err.name === "UnauthorizedError"){
         res.status(err.status)
     }
