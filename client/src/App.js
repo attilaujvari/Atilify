@@ -10,10 +10,10 @@ const App = () => {
     const {signup, login, logout, user, token, errMsg} = useContext(UserContext)
     return (
         <div>
-            <Navbar/>
+            <Navbar logout={logout} token={token} login={login}/>
             <Switch>
                  <Route exact path={"/"} component={Dashboard}/>
-                 <Route path={"/signup"} component={Signup}/>
+                 <Route path={"/signup"} render={rProps => <Signup {...rProps} signup={signup} />}/>
             </Switch>
         </div>
     )

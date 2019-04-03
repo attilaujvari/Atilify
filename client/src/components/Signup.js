@@ -1,13 +1,12 @@
-import React, {useContext} from "react"
-import {UserContext} from "../context/UserProvider";
+import React from "react"
 import SignupForm from "./forms/SignupForm";
 
-const Signup = () => {
-    const {signup, user, token, errMsg} = useContext(UserContext)
+const Signup = (props) => {
+
     return(
         <div>
             This is the top of the signup page
-            <SignupForm />
+            <SignupForm signup={props.signup}/>
             This is the bottom of the signup page
         </div>
     )
