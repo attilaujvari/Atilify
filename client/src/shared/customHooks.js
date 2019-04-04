@@ -8,7 +8,7 @@ import {useState} from "react"
 export const useToggle = startingToggle => {
     const [toggle, setToggle] = useState(startingToggle)
     const toggler = () => setToggle(!toggle)
-    return {toggle,toggler}
+    return {toggle,toggler, setToggle}
 }
 
 /**

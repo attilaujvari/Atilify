@@ -3,13 +3,11 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="JSX" />
   </component>
-  <component name="ProjectPlainTextFileTypeManager">
-    <file url="file://$PROJECT_DIR$/client/src/App.js" />
-    <file url="file://$PROJECT_DIR$/client/src/context/UserProvider.js" />
-    <file url="file://$PROJECT_DIR$/client/src/index.js" />
-  </component>
-  <component name="VagrantProjectSettings">
-    <option name="instanceFolder" value="" />
-    <option name="provider" value="" />
+  <component name="StyledComponentsInjections">
+    <option name="prefixes">
+      <array>
+        <option value="" />
+      </array>
+    </option>
   </component>
 </project>
