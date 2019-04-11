@@ -1,0 +1,10 @@
+.post{
+
+}
+.postImage{
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: right;
+}

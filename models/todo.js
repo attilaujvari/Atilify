@@ -6,6 +6,10 @@ const todoSchema = new Schema({
         type: String,
         required: true
     },
+    isCompleted:{
+        type: Boolean,
+        default: false
+    },
     imgUrl: String,
     summary: String,
     details: String,

@@ -1,0 +1,20 @@
+.dashboardContainer{
+    display: grid;
+    grid-template-columns: 20vw 60vw 20vw;
+    grid-template-rows: 3vh 45vh 45vh;
+    grid-template-areas:
+    ". ticker todo"
+    ". email todo"
+    ". postList .";
+    background: ghostwhite;
+}
+.postList{
+    grid-area: postList;
+    overflow: scroll;
+    border: rebeccapurple 1px solid;
+}
+.todoList{
+    grid-area: todo;
+    border: cornflowerblue 1px solid;
+    overflow: scroll;
+}

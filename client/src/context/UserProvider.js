@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import axios from "axios"
+import {withRouter} from "react-router";
 
 export const UserContext = React.createContext()
 
@@ -22,14 +23,13 @@ const UserProvider = props => {
                 user,
                 token,
             })
+            props.history.push("/home")
         }
         catch(err) {
             setUserState({ ...userState,errMsg: err.response.data.errMsg })
             }
         }
 
-// todo redirect login below to "/"
-    //todo have this prompt the data-retrieval
     const login = async credentials => {
         try{
             const response = await axios.post("/auth/login", credentials)
@@ -41,6 +41,7 @@ const UserProvider = props => {
                 user,
                 token,
             })
+            props.history.push("/home")
         }
         catch(err){
             setUserState({ ...userState,errMsg: err.response.data.errMsg })
@@ -54,6 +55,7 @@ const UserProvider = props => {
             user: {},
             token: "",
         })
+        props.history.push("/home")
     }
 
     return(
@@ -67,4 +69,4 @@ const UserProvider = props => {
     )
 }
 
-export default UserProvider
+export default withRouter(UserProvider)

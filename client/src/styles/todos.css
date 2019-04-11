@@ -1,0 +1,56 @@
+.todo{
+
+}
+.todoImage{
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*float: right;*/
+}
+.controlIcon{
+    height: 20px;
+    margin: 1px;
+    padding: 2px;
+    border-radius: 3px;
+    border: rgba(192,192,192,0.3) 1px solid;
+}
+.controlIcon:hover{
+    transform: translate3d(1px, 1px, 2px);
+}
+.editIcon{
+    background-color:  rgba(255,132,10,0.2);
+    transition-duration: 0.5s;
+}
+.editIcon:hover{
+    background-color:  rgba(255,132,10,0.6);
+    transition-duration: 0.5s;
+    transform: translate3d();
+}
+.deleteIcon:hover{
+    background-color:  rgba(255,10,10,0.6);
+    transition-duration: 0.5s;
+}
+.deleteIcon {
+    background-color: rgba(255, 10, 10, 0.2);
+    transition-duration: 0.5s;
+}
+.checkboxUnchecked{
+    background-color:  rgba(0,255,19,0.2);
+    transition-duration: 0.5s;
+}
+.checkboxUnchecked:hover{
+    background-color:  rgba(0,255,19,0.8);
+    transition-duration: 0.5s;
+}
+.checkboxChecked{
+    background-color:  rgba(0,255,19,1);
+    transition-duration: 0.5s;
+}
+.checkboxChecked:hover{
+    background-color:  rgba(0,255,19,0.5);
+    transition-duration: 0.5s;
+}
+.controlRight{
+    float: right;
+}

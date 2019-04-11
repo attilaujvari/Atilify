@@ -9,7 +9,7 @@ const Navbar = props => {
     return(
         <nav className={"nav"}>
             <div className={"navLeft navAll"}>
-                <Link to={"/"} onClick={()=>setToggle(true)}>Dashboard</Link>
+                <Link to={"/home"} onClick={()=>setToggle(true)}>Dashboard</Link>
             </div>
             {props.token
                 ?   <div className={"navRight navAll"}>

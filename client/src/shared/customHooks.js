@@ -21,9 +21,10 @@ export const useFormProperties = (initInputs, callback) => {
     const [inputs, setInputs] = useState(initInputs)
 
     const handleChange = e => {
+        const value = e.target.type === "checkbox" ? e.target.checked : e.target.value
         setInputs({
             ...inputs,
-            [e.target.name]: e.target.value
+            [e.target.name]: value
         })
     }
     const handleSubmit = e => {
